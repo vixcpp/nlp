@@ -8,8 +8,6 @@ Each test is a tiny executable registered with CTest.
 add_executable(vix_ai_nlp_test_tokenizer tokenizer_tests.cpp)
 target_link_libraries(vix_ai_nlp_test_tokenizer PRIVATE Vix::AI::nlp)
 target_compile_features(vix_ai_nlp_test_tokenizer PRIVATE cxx_std_20)
-# keep asserts in Release as well, optional:
-# target_compile_definitions(vix_ai_nlp_test_tokenizer PRIVATE NDEBUG=0)
 add_test(NAME nlp_tokenizer COMMAND vix_ai_nlp_test_tokenizer)
 
 add_executable(vix_ai_nlp_test_embedding embedding_tests.cpp)

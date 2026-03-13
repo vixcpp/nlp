@@ -8,22 +8,22 @@
 
 int main()
 {
-    using namespace vix::ai::nlp;
+  using namespace vix::ai::nlp;
 
-    Tokenizer tok;
-    auto t = tok.tokenize("hello");
-    if (t.size() != 1)
-        return EXIT_FAILURE;
-    Embedding emb;
-    auto v = emb.encode("hello");
-    if (v.empty())
-        return EXIT_FAILURE;
-    Pipeline pipe;
-    if (pipe.summarize("x") != "x")
-        return EXIT_FAILURE;
-    ModelLoader loader;
-    if (!loader.load("/dev/null"))
-        return EXIT_FAILURE;
+  Tokenizer tok;
+  auto t = tok.tokenize("hello");
+  if (t.size() != 1)
+    return EXIT_FAILURE;
+  Embedding emb;
+  auto v = emb.encode("hello");
+  if (v.empty())
+    return EXIT_FAILURE;
+  Pipeline pipe;
+  if (pipe.summarize("x") != "x")
+    return EXIT_FAILURE;
+  ModelLoader loader;
+  if (!loader.load("/dev/null"))
+    return EXIT_FAILURE;
 
-    return EXIT_SUCCESS;
+  return EXIT_SUCCESS;
 }
