@@ -12,7 +12,7 @@ option(VIX_AI_NLP_WARNINGS    "Enable extra warnings" ON)
 
 # ---- Header-only library ---------------------------------------------------
 add_library(vix_ai_nlp INTERFACE)
-add_library(Vix::AI::nlp ALIAS vix_ai_nlp)
+add_library(vix::ai::nlp ALIAS vix_ai_nlp)
 
 target_include_directories(vix_ai_nlp INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -54,7 +54,7 @@ if(VIX_AI_NLP_INSTALL)
 
   install(EXPORT vix_ai_nlpTargets
           FILE vix_ai_nlpTargets.cmake
-          NAMESPACE Vix::AI::
+          NAMESPACE vix::ai::
           DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/vix_ai/nlp)
 
   write_basic_package_version_file(
